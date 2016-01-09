@@ -16,7 +16,7 @@ rm -rf $RUBY_DESTDIR/usr
 # build a debian package
 gem install fpm --no-ri --no-rdoc
 fpm -s dir -t deb -n ruby$RUBY_PKG_VERSION -v $RUBY_VERSION --description "Ruby $RUBY_VERSION stable" -C $RUBY_DESTDIR \
-  -p $RUBY_DESTDIR/ruby$RUBY_PKG_VERSION-VERSION_ARCH.deb -d "libstdc++6 (>= 4.4.3)" \
+  -p $RUBY_DESTDIR/ruby$RUBY_PKG_VERSION-$UBUNTU_RELEASE-VERSION_ARCH.deb -d "libstdc++6 (>= 4.4.3)" \
   --replaces ruby2.1 --conflicts ruby2.1 \
   -d "libc6 (>= 2.6)" -d "libffi6 (>= 3.0.10)" -d "libgdbm3 (>= 1.8.3)" \
   -d "libncurses5 (>= 5.7)" -d "libreadline6 (>= 6.1)" \
