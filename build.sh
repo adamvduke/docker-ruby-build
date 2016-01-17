@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -e
+
+if [ "$1" = 'bash' ]; then
+  exec "$@"
+fi
+
 # create the build dir
 # and cd to it
 cd $RUBY_BUILD_DIR
