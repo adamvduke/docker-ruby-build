@@ -1,5 +1,9 @@
 build ruby debs in a docker container
 
+1. Make sure to update build.sh to add/remove the correct `--conflicts` and `--replaces` lines.
+1. Set the `RUBY_PKG_ITERATION` and `RUBY_PKG_MAINTAINER` environment variables for your build.
+1. Build the container(s) for the ubuntu release you want the ruby package to build build on.
+
 ```
 # build the containers
 docker build -t adamvduke/docker-ruby-build:precise -f precise/Dockerfile .
