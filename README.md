@@ -25,7 +25,7 @@ docker run -it --rm -v /path/to/host/output/directory:/tmp/ruby-build/dist \
 adamvduke/docker-ruby-build:trusty
 
 # use dpkg --info to inspect the package that you built and make sure it looks correct
-~$ docker run -it --rm -e RUBY_PKG_ITERATION=2 -e RUBY_PKG_MAINTAINER=adamduke@twitter.com -v ~/tmp/precise/dist:/tmp/ruby-build/dist adamvduke/docker-ruby-build:precise bash
+docker run -it --rm -v ~/tmp/precise/dist:/tmp/ruby-build/dist adamvduke/docker-ruby-build:precise bash
 root@4ca002d5435b:/# dpkg --info /tmp/ruby-build/dist/ruby2.3_2.3.0-2_amd64.deb
  new debian package, version 2.0.
  size 32744464 bytes: control archive= 36418 bytes.
@@ -46,9 +46,8 @@ root@4ca002d5435b:/# dpkg --info /tmp/ruby-build/dist/ruby2.3_2.3.0-2_amd64.deb
  Priority: extra
  Homepage: https://ruby-lang.org
  Description: Ruby 2.3.0 stable
-root@4ca002d5435b:/# exit
-exit
-~$ docker run -it --rm -e RUBY_PKG_ITERATION=2 -e RUBY_PKG_MAINTAINER=adamduke@twitter.com -v ~/tmp/trusty/dist:/tmp/ruby-build/dist adamvduke/docker-ruby-build:trusty bash
+
+docker run -it --rm -v ~/tmp/trusty/dist:/tmp/ruby-build/dist adamvduke/docker-ruby-build:trusty bash
 root@74d487e05ac5:/# dpkg --info /tmp/ruby-build/dist/ruby2.3_2.3.0-2_amd64.deb
  new debian package, version 2.0.
  size 30693586 bytes: control archive=36422 bytes.
