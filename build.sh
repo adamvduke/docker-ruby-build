@@ -22,7 +22,7 @@ rm -rf $RUBY_DESTDIR/usr
             --disable-install-rdoc \
             --with-destdir=$RUBY_DESTDIR && \
             make && \
-            make install
+            make install DESTDIR=$RUBY_DESTDIR
 
 cd $RUBY_DESTDIR
 
